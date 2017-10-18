@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/ll-laurend/lauren_scripts/issues"
   },
-  "homepage": "https://github.com/ll-laurend/lauren_scripts#readme"
+  "homepage": "https://github.com/ll-laurend/lauren_scripts#readme",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "dir-compare": "^1.4.0",
+    "dotenv": "^4.0.0",
+    "minimatch": "^3.0.4",
+    "path": "^0.12.7",
+    "slack": "^9.0.5",
+    "util": "^0.10.3"
+  }
 }
