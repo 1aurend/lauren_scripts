@@ -1,0 +1,19 @@
+{
+  "name": "lauren_scripts",
+  "version": "1.0.0",
+  "description": "for Lauren's ll scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ll-laurend/lauren_scripts.git"
+  },
+  "author": "Lauren Davidson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ll-laurend/lauren_scripts/issues"
+  },
+  "homepage": "https://github.com/ll-laurend/lauren_scripts#readme"
+}
