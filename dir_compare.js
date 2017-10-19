@@ -1,5 +1,5 @@
 var dirComp = require('dir-compare');
-var options = {compareSize: true, ignoreCase: true, excludeFilter: ".*"};
+var options = {compareSize: true, ignoreCase: true, excludeFilter: ".*, *_m2s"};
 const cp = require("child_process");
 const path = require("path")
 var slack = require('slack');
@@ -20,7 +20,7 @@ console.log('Total Issues: ' + res.differences);
 
 if (res.same==true){
 
-  var thePayload = 'payload={"channel": "#ll-tests", "username": "theworkflow-bot", "text": "<@laurend>: Directories:' + dirPath1 + ' and ' + dirPath2 + ' match. ", "icon_emoji": ":desktop_computer:"}'
+  var thePayload = 'payload={"channel": "#ll-tests", "username": "theworkflow-bot", "text": "<@mlv-team>:' + dirPath1 + ' and ' + dirPath2 + ' match. ", "icon_emoji": ":desktop_computer:"}'
   cp.spawnSync("curl", ['-X', 'POST', '--data-urlencode', thePayload, process.env.SLACK_WEBHOOK_URL]);
 
   console.log('\n\n Directories match!');
@@ -29,7 +29,7 @@ if (res.same==true){
 
 else {
 
-  var thePayload = 'payload={"channel": "#ll-tests", "username": "theworkflow-bot", "text": "<@laurend>: Directories:' + dirPath1 + ' and ' + dirPath2 + ' do not match. ", "icon_emoji": ":desktop_computer:"}'
+  var thePayload = 'payload={"channel": "#ll-tests", "username": "theworkflow-bot", "text": "<@mlv-team>:' + dirPath1 + ' and ' + dirPath2 + ' do not match. ", "icon_emoji": ":desktop_computer:"}'
   cp.spawnSync("curl", ['-X', 'POST', '--data-urlencode', thePayload, process.env.SLACK_WEBHOOK_URL]);
 
   var format = require('util').format;
@@ -40,7 +40,7 @@ else {
 
         var name1 = entry.name1 ? entry.name1 : '';
 
-        var thePayload = 'payload={"channel": "#ll-tests", "username": "theworkflow-bot", "text": "The file '+ name1 +' is missing from ' + dirPath2 +' .", "icon_emoji": ":desktop_computer:"}'
+        var thePayload = 'payload={"channel": "#ll-tests", "username": "theworkflow-bot", "text": "'+ name1 +' is missing from ' + dirPath2 +' .", "icon_emoji": ":desktop_computer:"}'
         cp.spawnSync("curl", ['-X', 'POST', '--data-urlencode', thePayload, process.env.SLACK_WEBHOOK_URL]);
       }
 
@@ -48,7 +48,7 @@ else {
 
         var name1 = entry.name1 ? entry.name1 : '';
 
-        var thePayload = 'payload={"channel": "#ll-tests", "username": "theworkflow-bot", "text": "The file '+ name1 +' is missing from ' + dirPath1 +' .", "icon_emoji": ":desktop_computer:"}'
+        var thePayload = 'payload={"channel": "#ll-tests", "username": "theworkflow-bot", "text": "'+ name1 +' is missing from ' + dirPath1 +' .", "icon_emoji": ":desktop_computer:"}'
         cp.spawnSync("curl", ['-X', 'POST', '--data-urlencode', thePayload, process.env.SLACK_WEBHOOK_URL]);
       }
 
