@@ -1,0 +1,41 @@
+{
+  "name": "thelocalworkflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.5.0",
+    "body-parser": "^1.18.2",
+    "columnify": "^1.5.4",
+    "cookie-parser": "^1.4.3",
+    "dateformat": "^2.0.0",
+    "debug": "^2.6.9",
+    "directory-to-object": "^1.1.1",
+    "dotenv": "^4.0.0",
+    "easy-file-walker": "0.0.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "express-validator": "^4.2.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "moment": "^2.18.1",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.4",
+    "morgan": "^1.8.2",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.4.4",
+    "shelljs": "^0.7.8",
+    "slack": "^8.4.1",
+    "walk": "^2.3.9",
+    "xml": "^1.0.1",
+    "xml2js": "^0.4.19"
+  }
+}
