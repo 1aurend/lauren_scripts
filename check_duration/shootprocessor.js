@@ -13,6 +13,8 @@ const Shoot = require("./workflowobjects").Shoot;
 function rename(folderPath) {
   // regex to cope with hidden files
   var re = /^\./;
+  var re2 = /.txt$/;
+  var re3 = /.fcpxml$/;
   // construct new Shoot object using the Shoot object constructor we required from workflowobjects
   var thisShoot = new Shoot(folderPath);
   // start arrays for clips and cameras that we'll add to as we loop through the folders and files
@@ -28,7 +30,7 @@ function rename(folderPath) {
       // there is probably a better way to do this
       var offsetForIndex = 0;
       fs.readdirSync(path.join(folderPath,camFolder)).forEach(function(file, index) {
-        if (re.test(file)) {
+        if (re.test(file) || re2.test(file) || re3.test(file)) {
           // if this is a hidden file, don't bother with it, but increment that offset so that we don't misnumber the actual clip files
           offsetForIndex++;
         }

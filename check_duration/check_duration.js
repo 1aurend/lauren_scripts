@@ -16,7 +16,7 @@ function loopDir(folderPath) {
       };
     });
 
-    console.log(shootFolders + "\n");
+    // console.log(shootFolders + "\n");
   };
 
 var shootsToTime = new loopDir(dirToTime);
